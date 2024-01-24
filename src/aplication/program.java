@@ -2,6 +2,7 @@ package aplication;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -11,6 +12,8 @@ import model.entities.Seller;
 public class program {
 
 	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
 		
 		
 		//Dessa forma o programa nao conhece a implementação, Conhecendo somente a interface,
@@ -53,6 +56,13 @@ public class program {
 		seller.setName("Bruce Waine");
 		sellerDao.update(seller);
 		System.out.println("Update completed");
+		
+		System.out.println("\n=== TEST 6: seller seller delete ===");
+		System.out.print("Enter id for delet test: ");
+		int id = scan.nextInt();
+		
+		sellerDao.deleteById(id);
+		System.out.println("Delete completed");
 	}
 
 }
